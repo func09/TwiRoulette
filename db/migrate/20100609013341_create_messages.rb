@@ -5,6 +5,7 @@ class CreateMessages < ActiveRecord::Migration
       t.string :body, :null => false
       t.timestamps
     end
+    add_index :messages, [:user_id]
   end
 
   def self.down
