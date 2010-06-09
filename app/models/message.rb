@@ -1,6 +1,9 @@
 class Message < ActiveRecord::Base
   belongs_to :user
   belongs_to :matching
+  
+  named_scope :yet, :conditions => ['matched = ?', false]
+  
 end
 
 # == Schema Information

@@ -4,7 +4,7 @@ class CreateMessages < ActiveRecord::Migration
       t.integer :user_id, :null => false
       t.string :body, :null => false
       t.integer :matching_id
-      t.boolean :matched
+      t.boolean :matched, :null => false, :default => false
       t.datetime :matched_at
       t.timestamps
     end
