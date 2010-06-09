@@ -15,19 +15,21 @@ class Message < ActiveRecord::Base
         b = arr.slice!(rand(arr.size - 1))
         match = Matching.create
         transaction do
-          a.matching = match
-          a.matched = true
-          a.matched_at = Time.now
-          a.save
-          b.matching = match
-          b.matched = true
-          b.matched_at = Time.now
-          b.save
+          a.match!(match)
+          b.match!(match)
         end
       end
       logger.info "Finished matching.(#{Time.now})"
     end
     
+  end
+  
+  # マッチさせる
+  def match!(matching)
+    self.matching = matching
+    self.matched = true
+    self.matched_at = Time.now
+    self.save
   end
   
 end
