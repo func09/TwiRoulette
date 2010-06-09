@@ -1,17 +1,23 @@
 # This file was auto-generated.  Feel free to customize it to your whim.
 
 production:
-    site_name: Test Site
+    site_name: TwiRoulette
     admin_email: admin@test.com
-    site_url: http://localhost:3000/
+    site_url: http://twiroulette.heroku.com/
+    twitter:
+      hashtag: twiroulette
 
 development:
-    site_name: Test Site
+    site_name: TwiRoulette(DEV)
     admin_email: admin@test.com
     site_url: http://localhost:3000/
+    twitter:
+      hashtag: twiroulette
 
 test:
-    site_name: Test Site
+    site_name: TwiRoulette(TEST)
     admin_email: admin@test.com
     site_url: http://localhost:3000/
+    twitter:
+      hashtag: twiroulette
 
