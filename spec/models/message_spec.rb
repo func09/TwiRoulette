@@ -1,15 +1,19 @@
 require 'spec_helper'
 
 describe Message do
-  before(:each) do
-    @valid_attributes = {
-      
-    }
+  
+  context 'マッチング処理（Message.match_all）' do
+    context '抽選待ちの人数が0人だったなら、' do
+      it 'マッチングの数が増えないこと'
+    end
+    context '抽選待ちの人数が偶数人だったなら、' do
+      it '余りがでないこと'
+    end
+    context '抽選待ちの人数が奇数人だったなら、' do
+      it '余りが１人でること'
+    end
   end
-
-  it "should create a new instance given valid attributes" do
-    Message.create!(@valid_attributes)
-  end
+  
 end
 
 # == Schema Information
