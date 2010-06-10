@@ -10,6 +10,12 @@
   %body
     #header
       %h1 ツイルーレット
+      .nav
+        %ul
+          - if logged_in?
+            %li= link_to 'Logout', logout_path
+          - else
+            %li= link_to 'Login', login_path
     #wrapper{:class => "#{controller_name}_#{action_name}"}
       #main
         #flash
