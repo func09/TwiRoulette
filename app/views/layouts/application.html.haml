@@ -1,0 +1,25 @@
+!!! XML
+!!!
+%html{:'xml:lang' => 'ja', :lang => 'ja'}
+  %head
+    %meta{'http-equiv' => 'Content-Type', 'content' => 'text/html; charset=utf-8'}
+    %meta{'http-equiv' => 'Content-Style-Type', 'content' => 'text/css'}
+    %meta{'http-equiv' => 'Content-Script-Type', 'content' => 'text/javascript'}
+    %title ツイルーレット
+    = javascript_include_tag 'http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js'
+  %body
+    #header
+      %h1 ツイルーレット
+    #wrapper{:class => "#{controller_name}_#{action_name}"}
+      #main
+        #flash
+          - unless flash.empty?
+            - if flash[:notice].present?
+              = content_tag :div, flash[:notice],  :class => 'notice'
+            - if flash[:warning].present?
+              = content_tag :div, flash[:warning], :class => 'warning'
+            - if flash[:error].present?
+              = content_tag :div, flash[:error],   :class => 'error'
+        = yield
+      #sub
+    #footer　
